@@ -1,28 +1,16 @@
-## Overview
-A proportional-integral-derivative (PID) controller.
+#[test]
+fn api() {
+    let mut pid = pid_ctrl::PidCtrl::default();
+    pid.kp.set_scale(3.0);
+    pid.ki.set_scale(2.0);
+    pid.kd.set_scale(1.0);
+    let mut pid1 = pid_ctrl::PidCtrl::new_with_pid(3.0, 2.0, 1.1);
+    pid1.kd.set_scale(1.0);
+    assert_eq!(pid, pid1);
+}
 
-Inspired by [pid-rs](https://github.com/braincore/pid-rs) 
-
-With cleaner API and assumptions (constant time delta and symmetrical limits) dropped.
-
-## Features
-* Discrete time PID controller
-* Defined for generic float types
-* Attempts to conform to rust [API Guidelines](https://rust-lang.github.io/api-guidelines/about.html)
-* ```#![no_std]```
-* Limits for each of p, i, d terms and output
-* Calculates derivative term using measurement over error (no derivative kick on new setpoint)
-* Clamps time interval to between ```Float::epsilon()``` and ```Float::infinity()```
-
-## Installation
-```cargo add pid-ctrl```
-
-## Examples
-```rust
-use pid_ctrl;
-use num_traits;
-
-fn main() {
+#[test]
+fn example() {
     let mut pid = pid_ctrl::PidCtrl::new_with_pid(3.0, 2.0, 1.0);
 
     let setpoint = 5.0;
@@ -81,8 +69,3 @@ fn main() {
         pid_ctrl::PidOut::new(0.0, 28.0, 0.0, 28.0)
     );
 }
-```
-## Contribute
-Feel free to raise issues. 
-
-Would like to make ```#![no_std]``` optional so types can impl Display trait.
