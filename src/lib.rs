@@ -183,10 +183,10 @@ impl<T: FloatCore + core::default::Default> PidIn<T> {
 #[derive(Copy, Clone, PartialEq, PartialOrd, Hash, Debug, Default)]
 #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
 pub struct PidOut <T: FloatCore + core::default::Default> {
-    p: T,
-    i: T,
-    d: T,
-    out: T,
+    pub p: T,
+    pub i: T,
+    pub d: T,
+    pub out: T,
 }
 
 impl<T: FloatCore + core::default::Default> PidOut<T> {
