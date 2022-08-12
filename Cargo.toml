@@ -1,0 +1,17 @@
+[package]
+name = "pid-ctrl"
+version = "0.1.0"
+authors = ["Kxie"]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "A flexible PID controller"
+repository = "https://github.com/ua-kxie/pid-ctrl"
+keywords = ["pid", "control", "controller", "embedded"]
+categories = ["embedded", "no-std"]
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+num-traits = "0.2.15"
+serde = { version = "1.0", optional = true, features = ["derive"]}
