@@ -190,7 +190,7 @@ pub struct PidOut <T: FloatCore + core::default::Default> {
 }
 
 impl<T: FloatCore + core::default::Default> PidOut<T> {
-        fn new(p:T, i:T, d:T, out:T) -> Self {
+        pub fn new(p:T, i:T, d:T, out:T) -> Self {
             Self{p, i, d, out}
         }
     }
