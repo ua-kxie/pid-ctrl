@@ -47,7 +47,7 @@ fn main() {
     // time_delta gets clamped to Float::epsilon() - Float::infinity()
     let measurement = 1.0;
     let time_delta = -7.0;
-    pid.kd.set_scale(num_traits::Float::epsilon());
+    pid.kd.set_scale(num_traits::float::FloatCore::epsilon());
     assert_eq!(pid.step(
         pid_ctrl::PidIn::new(measurement, time_delta)), 
         pid_ctrl::PidOut::new(10.0, 28.0, -1.0, 37.0)

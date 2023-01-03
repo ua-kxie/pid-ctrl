@@ -3,7 +3,7 @@ use pid_ctrl as pid;
 fn main() {
     let mut pid = pid::PidCtrl::new_with_pid(0.5, 0.1, 0.1);
     let mut measurement = 0.0;
-    let mut width:usize = 0;
+    let mut width:usize;
     pid.init(7.5, measurement);
 
     for _i in 1..21 {
