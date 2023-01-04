@@ -2,7 +2,7 @@
 name = "pid-ctrl"
 version = "0.1.4"
 authors = ["Kxie"]
-edition = "2023"
+edition = "2021"
 license = "MIT OR Apache-2.0"
 description = "A flexible PID controller"
 repository = "https://github.com/ua-kxie/pid-ctrl"
